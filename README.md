@@ -1,21 +1,58 @@
-# Generating audible signal from inaudible distortion products
+# Overview
 
-- This repo is accompanying our recent preprint ["Distortion rules: audibility creation in the mosquito ear"](https://www.biorxiv.org/content/10.1101/2025.09.05.674403v1).
-- A licence will be added upon publication.
+This repository contains the full analysis and mechanistic modelling accompanying the preprint "Distortion rules: audibility creation in the mosquito ear" ([Alampounti *et al* 2025](https://www.biorxiv.org/content/10.1101/2025.09.05.674403v1)). This work investigates how nonlinear mechanical distortions (DPs) in mosquito auditory systems generate interpretable neural signals from otherwise inaudible stimuli.
 
-This repository contains the full analysis and modelling used of how mechanical stimuli translate to auditory neuronal responses.
+The code implements signal extraction, DP identification, statistical modelling, and visualisation pipelines used to uncover structure in high-noise biological data. 
 
-<img width="800" height="378" alt="image" src="https://github.com/user-attachments/assets/24fc7854-fc5d-4086-bea5-3cad9d4ac227" />
 
----
 
-# Data Availability
 
-Data will be uploaded to public repository upon publication.
+## Repository structure and workflow
 
----
+For readers wishing to reproduce or explore the analysis:
 
-# Notebooks
+1. Start with `2-tone analysis notebook.nb`  
+   → data cleaning, segmentation, and distortion product extraction.
+
+2. See `2-tone experiments.nb`  
+   → theoretical modelling of distortion product families.
+
+3. Use `figures for the paper.nb`  
+   → generation of final publication figures.
+
+4. Explore neuronal analyses in:
+   - `alex stream analysis.nb`
+   - `my nerve analysis.nb`
+
+
+
+## Notes on tooling
+
+This analysis was implemented fully in Wolfram Mathematica to make full use of its symbolic capabilities in modelling DP families, which in turn allow for an efficient identification and extraction from FFT mosaics.
+
+
+
+## Citation
+
+This repository accompanies the preprint:
+
+Alampounti, C. A. et al. (2025).  
+*Distortion rules: audibility creation in the mosquito ear*.  
+bioRxiv. https://doi.org/10.1101/2025.09.05.674403
+
+If you reference or discuss this work, please cite the paper above.
+
+## Data Availability & Licence
+
+No license is granted at this stage.  
+All code and materials in this repository are © the authors.
+
+A license will be added upon peer-reviewed publication.
+
+Data will be uploaded to a public repository upon publication.
+
+
+## Notebooks
 
 - `2-tone analysis notebook.nb` serves as the starting point (cleaning, segmenting, DP-extraction algorithms)
 - `2-tone experiments` serves as a secondary supplement which contains modelling on expected distortion product families
@@ -26,7 +63,15 @@ Data will be uploaded to public repository upon publication.
 - `search for DPs.nb` is a helper notebook for quickly checking whether a particular "line" within a spectral mosaic corresponds to a known DP family.
 - `sensitivity regions.nb` a core notebook that deals with envelope extraction consolidating information from all mosquitoes collected.
 
----
+# Generating audible signal from inaudible distortion products
+
+
+<img width="800" height="378" alt="image" src="https://github.com/user-attachments/assets/24fc7854-fc5d-4086-bea5-3cad9d4ac227" />
+
+
+
+
+
 
 # Results
 
@@ -50,7 +95,7 @@ Two types of stimuli are presented:
 - **one-tone stimuli $f_1$:** representing either an idle male with a flying female passing by, or a single male in flight.
 - **two-tone stimuli $f_1$ and $f_2$:** representing a pair flying together.
 
-The $f_1$ stimulus scans from 100-1000 Hz, encapsualtes the ecologically relevant frequencies for a given temperature (300-500 Hz).
+The $f_1$ stimulus scans from 100-1000 Hz, encapsulates the ecologically relevant frequencies for a given temperature (300-500 Hz).
 The $f_2$ stimulus is fixed at 540 Hz, which is the male flight tone frequency.
 
 This allows us to create an input/output database across a large span of frequencies that go beyond the ecologically relevant frequencies to test mechanistic properties
@@ -76,7 +121,7 @@ around 800 Hz.
 
 The classification between each of the three mechanical states (no sso, weak sso and strong sso) was done using principal component analysis (PCA) on the envelopes of free-fluctuating flagella.
 
-The cummulative explained variance shows that we need about 2-3 dimensional PCA bases to sufficiently explain the variance observed.
+The cumulative explained variance shows that we need about 2-3 dimensional PCA bases to sufficiently explain the variance observed.
 
 <img width="655" height="337" alt="image" src="https://github.com/user-attachments/assets/49f95b49-c2d6-437b-ad2f-2eb6ba386c17" />
 > **Fig.3** The presence of a continuum shows that an animal can, in principle, smoothly transition from one mechanical state to the other.
@@ -89,7 +134,7 @@ To better understand the bulk effects, we look at the spectral domain. FFTs of e
 > **Fig.4:** The difficulty of those mosaics is extracting resulting distortion product families which manifest as "straight lines". The 3D mosaic is dimensionally reduced, digitised, and then a custom, physics-based algorithm is identifying and extracting these lines for both one-tone (top) and two-tone (bottom) mosaics.
 
 
-The algorithnm is able to identify and extract from specific regions of interest if some frequency ranges are considered neurologically irrelevant:
+The algorithm is able to identify and extract from specific regions of interest if some frequency ranges are considered neurologically irrelevant:
 
 <img width="655" height="374" alt="image" src="https://github.com/user-attachments/assets/0b2ebf8e-0bc2-4e68-9dec-cbe06d6005f2" />
 > **Fig.5:** ROI-dependent feature extraction of DP families for a given mosaic.
