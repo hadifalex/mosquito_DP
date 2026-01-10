@@ -7,6 +7,28 @@ This repository contains the full analysis and modelling used of how mechanical 
 
 <img width="800" height="378" alt="image" src="https://github.com/user-attachments/assets/24fc7854-fc5d-4086-bea5-3cad9d4ac227" />
 
+---
+
+# Data Availability
+
+Data will be uploaded to public repository upon publication.
+
+---
+
+# Notebooks
+
+- `2-tone analysis notebook.nb` serves as the starting point (cleaning, segmenting, DP-extraction algorithms)
+- `2-tone experiments` serves as a secondary supplement which contains modelling on expected distortion product families
+- `alex stream analysis.nb` is a parallel analysis on neuronal spike patterns.
+- `figures for the paper.nb` contains the plotting part of the final figures.
+- `my nerve analysis.nb` is using a generalised bulk-structure approach to understanding the role of DPs in the nerve response and tries to find statistical patterns.
+- `pure vs DP tones` - computationally heavy algorithms for testing whether the auditory system acts preferentially towards distortion products over pure tones.
+- `search for DPs.nb` is a helper notebook for quickly checking whether a particular "line" within a spectral mosaic corresponds to a known DP family.
+- `sensitivity regions.nb` a core notebook that deals with envelope extraction consolidating information from all mosquitoes collected.
+
+---
+
+# Results
 
 ## How do disease-transmitting mosquitoes find their mates?
 
