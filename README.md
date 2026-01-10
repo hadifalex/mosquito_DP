@@ -5,6 +5,8 @@
 
 This repository contains the full analysis and modelling used of how mechanical stimuli translate to auditory neuronal responses.
 
+<img width="800" height="378" alt="image" src="https://github.com/user-attachments/assets/24fc7854-fc5d-4086-bea5-3cad9d4ac227" />
+
 
 ## How do disease-transmitting mosquitoes find their mates?
 
@@ -32,7 +34,7 @@ The $f_2$ stimulus is fixed at 540 Hz, which is the male flight tone frequency.
 This allows us to create an input/output database across a large span of frequencies that go beyond the ecologically relevant frequencies to test mechanistic properties
 of their auditory system. 
 
-![alt text](image.png)
+<img width="655" height="591" alt="image" src="https://github.com/user-attachments/assets/b607dcb2-094f-48de-93d0-d1bc38a977e4" />
 > **Fig.1:** Basic experimental concept. A) Experimental setup. Stimulus via electrostatic actuators. Mechanical motion recorded via LDV. Neuronal response recorded via electrophysiology. B) Each recording channel is recorded for all stimulus frequencies. C) FFT of recordings reveal the prominence of distortion products (DPs) which are not random but generate structure.
 
 
@@ -42,7 +44,7 @@ of their auditory system.
 
 The envelope of the flagellar and nerve recordings was extracted using a SNIP background estimator.
 
-![alt text](image-2.png)
+<img width="654" height="325" alt="image" src="https://github.com/user-attachments/assets/74ac0c96-a4e2-435c-9401-2c1f9c61302b" />
 > **Fig.2:** The results show that the flagellar mechanics (black) are perfectly in line with a resonant peak of a damped harmonic oscillator.
 > Similarly, the nerve response spans around 100-400 Hz, perfectly in line with known literature. The two novel, state-dependent auditory regions are highlighted in light blue and light red backgrounds.
 
@@ -54,33 +56,32 @@ The classification between each of the three mechanical states (no sso, weak sso
 
 The cummulative explained variance shows that we need about 2-3 dimensional PCA bases to sufficiently explain the variance observed.
 
-![alt text](image-4.png)
+<img width="655" height="337" alt="image" src="https://github.com/user-attachments/assets/49f95b49-c2d6-437b-ad2f-2eb6ba386c17" />
 > **Fig.3** The presence of a continuum shows that an animal can, in principle, smoothly transition from one mechanical state to the other.
 
 ### Creation of spectral mosaics
 
 To better understand the bulk effects, we look at the spectral domain. FFTs of each response to a stimulus is aggregated and combined into a spectral "mosaic" as shown in Fig.1.
 
-
-![alt text](image-1.png)
+<img width="655" height="406" alt="image" src="https://github.com/user-attachments/assets/2b102d1b-4e66-44ec-b094-dc952a7bcf05" />
 > **Fig.4:** The difficulty of those mosaics is extracting resulting distortion product families which manifest as "straight lines". The 3D mosaic is dimensionally reduced, digitised, and then a custom, physics-based algorithm is identifying and extracting these lines for both one-tone (top) and two-tone (bottom) mosaics.
 
 
 The algorithnm is able to identify and extract from specific regions of interest if some frequency ranges are considered neurologically irrelevant:
 
-![alt text](image-3.png)
+<img width="655" height="374" alt="image" src="https://github.com/user-attachments/assets/0b2ebf8e-0bc2-4e68-9dec-cbe06d6005f2" />
 > **Fig.5:** ROI-dependent feature extraction of DP families for a given mosaic.
 
 ### Stronger responses from DP-based signals
 
-![alt text](image-5.png)
+<img width="568" height="278" alt="image" src="https://github.com/user-attachments/assets/36a940fa-209e-4312-a96f-ea0c3c115b18" />
 > **Fig.6:** DP-based decomposition reveals that animals exhibiting strong SSOs, have a 50% boost in nerve response in the quadratic DP family (yellow) hinting at a hidden, or SSO-specific neuronal population. 
 
 ### Multi-species sensitivity analysis
 
 Distortion products have a clear auditory advantage over pure tones, a reason could be the mechanistic encoding of neuronal information. To understand whether such a feature is a general feature of mosquitoes, two more species were recruited to understand the relationship between sensitivity and neuronal advantage.
 
-![alt text](image-6.png)
+<img width="653" height="397" alt="image" src="https://github.com/user-attachments/assets/d73db517-483a-4b97-b08a-84c954ceb5e9" />
 > **Fig.7:** Overall, distortion products appear to be far more sensitive to external stimuli than any pure-tone counterpart, with Anopheles being able to recruit 50% larger compound action potentials at times smaller flagellar displacements.
 
 The clustering was performed using a gaussian mixture model for each of the three mechanical states.
