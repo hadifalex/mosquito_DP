@@ -1,0 +1,339 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     13623,        331]
+NotebookOptionsPosition[     12276,        300]
+NotebookOutlinePosition[     12684,        316]
+CellTagsIndexPosition[     12641,        313]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.970127381705662*^9, 
+  3.970127381822773*^9}},ExpressionUUID->"3ade5adc-5a8f-ca45-91be-\
+128794695cf6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lfiles1Tnames", " ", "=", " ", 
+   RowBox[{"FileNames", "[", 
+    RowBox[{
+     RowBox[{"\"\<*\>\"", "<>", "\"\<_a_\>\"", "<>", "\"\<*.txt\>\""}], ",", 
+     RowBox[{"dir", "<>", "\"\<\\Laser\>\""}], ",", "Infinity"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"lfiles2Tnames", " ", "=", " ", 
+    RowBox[{"FileNames", "[", 
+     RowBox[{
+      RowBox[{"\"\<*\>\"", "<>", "\"\<_b_\>\"", "<>", "\"\<*.txt\>\""}], ",", 
+      RowBox[{"dir", "<>", "\"\<\\Laser\>\""}], ",", "Infinity"}], "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "freqSearcher", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"freqSearcher", "[", "file_", "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", "lfft1T", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"lfft1T", "=", 
+       RowBox[{"fourier", "[", 
+        RowBox[{
+         RowBox[{"Fold", "[", 
+          RowBox[{"HighpassFilter", ",", 
+           RowBox[{"readMyFile", "[", 
+            RowBox[{"file", ",", "2"}], "]"}], ",", 
+           RowBox[{"2", 
+            RowBox[{"\[Pi]", "/", "sRate"}], " ", 
+            RowBox[{"{", 
+             RowBox[{"60", ",", "60", ",", "60"}], "}"}]}]}], "]"}], ",", 
+         "sRate", ",", "1000"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"lfft1T", "[", 
+        RowBox[{"[", " ", 
+         RowBox[{
+          RowBox[{"FindPeaks", "[", 
+           RowBox[{
+            RowBox[{"lfft1T", "[", 
+             RowBox[{"[", 
+              RowBox[{";;", ",", "2"}], "]"}], "]"}], ",", "Automatic", ",", 
+            "Automatic", ",", "1000"}], "]"}], "[", 
+          RowBox[{"[", 
+           RowBox[{"1", ",", "1"}], "]"}], "]"}], "]"}], "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"oneTfreqs", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"freqSearcher", "[", "#", "]"}], "&"}], "/@", 
+   "lfiles1Tnames"}]}], "\[IndentingNewLine]", 
+ RowBox[{"twoTfreqs", "=", 
+  RowBox[{"1.5", " ", "oneTfreqs"}]}]}], "Input",
+ CellChangeTimes->{{3.970126249018244*^9, 3.9701262674584026`*^9}, {
+  3.9701263151764946`*^9, 3.9701265842166805`*^9}, {3.9701266216831303`*^9, 
+  3.9701266875136642`*^9}, {3.970127158310858*^9, 3.970127248015545*^9}, {
+  3.97012729054319*^9, 3.970127303881027*^9}, {3.9701273415462513`*^9, 
+  3.970127391213318*^9}, {3.970127473437763*^9, 3.9701274994367523`*^9}, {
+  3.9701279640237637`*^9, 3.970127972075012*^9}, {3.9701288537864704`*^9, 
+  3.970128854088646*^9}},
+ CellLabel->
+  "In[180]:=",ExpressionUUID->"f9f57d4d-3a63-0b45-ba9a-0528c5bedd1d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "300.`", ",", "300.`", ",", "300.`", ",", "310.`", ",", "310.`", ",", 
+   "310.`", ",", "320.`", ",", "320.`", ",", "320.`", ",", "330.`", ",", 
+   "330.`", ",", "330.`", ",", "340.`", ",", "340.`", ",", "340.`", ",", 
+   "350.`", ",", "350.`", ",", "350.`", ",", "370.`", ",", "370.`", ",", 
+   "370.`", ",", "380.`", ",", "380.`", ",", "380.`", ",", "390.`", ",", 
+   "390.`", ",", "390.`", ",", "400.`", ",", "400.`", ",", "400.`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.9701263274937706`*^9, 3.9701264049252815`*^9}, {
+   3.9701264439632664`*^9, 3.9701264636968155`*^9}, {3.9701264966571064`*^9, 
+   3.970126560641573*^9}, 3.970126625671152*^9, {3.9701266598615303`*^9, 
+   3.9701266878810024`*^9}, 3.970127254453989*^9, 3.9701273686974907`*^9, 
+   3.9701274009978256`*^9, 3.970127480442255*^9, 3.9701278209304504`*^9, {
+   3.970127969199873*^9, 3.9701279780739307`*^9}, 3.9701288587300205`*^9},
+ CellLabel->
+  "Out[184]=",ExpressionUUID->"70939704-b027-9049-ac3b-2604f18e6885"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "450.`", ",", "450.`", ",", "450.`", ",", "465.`", ",", "465.`", ",", 
+   "465.`", ",", "480.`", ",", "480.`", ",", "480.`", ",", "495.`", ",", 
+   "495.`", ",", "495.`", ",", "510.`", ",", "510.`", ",", "510.`", ",", 
+   "525.`", ",", "525.`", ",", "525.`", ",", "555.`", ",", "555.`", ",", 
+   "555.`", ",", "570.`", ",", "570.`", ",", "570.`", ",", "585.`", ",", 
+   "585.`", ",", "585.`", ",", "600.`", ",", "600.`", ",", "600.`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.9701263274937706`*^9, 3.9701264049252815`*^9}, {
+   3.9701264439632664`*^9, 3.9701264636968155`*^9}, {3.9701264966571064`*^9, 
+   3.970126560641573*^9}, 3.970126625671152*^9, {3.9701266598615303`*^9, 
+   3.9701266878810024`*^9}, 3.970127254453989*^9, 3.9701273686974907`*^9, 
+   3.9701274009978256`*^9, 3.970127480442255*^9, 3.9701278209304504`*^9, {
+   3.970127969199873*^9, 3.9701279780739307`*^9}, 3.970128858736027*^9},
+ CellLabel->
+  "Out[185]=",ExpressionUUID->"e85ba0f2-2c40-2e43-89d4-320d0ce8278f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["dir"], "Input",
+ CellChangeTimes->{{3.970129291326391*^9, 3.9701292924247913`*^9}},
+ CellLabel->
+  "In[189]:=",ExpressionUUID->"fe367aab-2e45-6644-82f4-3fa4bd2a6796"],
+
+Cell[BoxData["\<\"N:\\\\Storage Files\\\\UCL Data\\\\Aedes\\\\Mosquito \
+1\\\\ratio scan\"\>"], "Output",
+ CellChangeTimes->{3.9701292926683064`*^9},
+ CellLabel->
+  "Out[189]=",ExpressionUUID->"112a2fc7-09c2-4846-b026-e4d671722807"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ParentDirectory", "[", "]"}], 
+    "<>", "\"\<\\\\ratio scan_frequencyList.txt\>\""}], ",", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"oneTfreqs", ",", "oneTfreqs"}], "}"}], "\[Transpose]"}], 
+    "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9701288713180885`*^9, 3.970128891576729*^9}, {
+  3.970129072075012*^9, 3.9701290838111687`*^9}, {3.9701292785230865`*^9, 
+  3.970129304954069*^9}, {3.9701293451689262`*^9, 3.9701293577966537`*^9}},
+ CellLabel->
+  "In[191]:=",ExpressionUUID->"cad700fd-1d5b-8b45-9c82-fc46e6deac9f"],
+
+Cell[BoxData["\<\"N:\\\\Storage Files\\\\UCL Data\\\\Aedes\\\\Mosquito \
+1\\\\ratio scan_frequencyList.txt\"\>"], "Output",
+ CellChangeTimes->{{3.9701288816554966`*^9, 3.9701288923221073`*^9}, {
+  3.9701293511421127`*^9, 3.970129359943716*^9}},
+ CellLabel->
+  "Out[191]=",ExpressionUUID->"6f8d42cc-82c5-7a41-8238-fcac964f4b28"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"Manipulate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "=", " ", 
+      RowBox[{"fourier", "[", 
+       RowBox[{
+        RowBox[{"Fold", "[", 
+         RowBox[{"HighpassFilter", ",", 
+          RowBox[{"readMyFile", "[", 
+           RowBox[{
+            RowBox[{"lfiles1Tnames", "[", 
+             RowBox[{"[", "i", "]"}], "]"}], ",", "2"}], "]"}], ",", 
+          RowBox[{"2", 
+           RowBox[{"\[Pi]", "/", "sRate"}], " ", 
+           RowBox[{"{", 
+            RowBox[{"60", ",", "60", ",", "60"}], "}"}]}]}], "]"}], ",", 
+        "sRate", ",", "1000"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ListLinePlot", "[", 
+      RowBox[{"t", ",", 
+       RowBox[{"Epilog", "->", 
+        RowBox[{"{", 
+         RowBox[{"red", ",", 
+          RowBox[{"AbsolutePointSize", "[", "7", "]"}], ",", 
+          RowBox[{"Point", "[", 
+           RowBox[{"t", "[", 
+            RowBox[{"[", 
+             RowBox[{
+              RowBox[{"FindPeaks", "[", 
+               RowBox[{
+                RowBox[{"t", "[", 
+                 RowBox[{"[", 
+                  RowBox[{";;", ",", "2"}], "]"}], "]"}], ",", "Automatic", ",",
+                 "Automatic", ",", "1000"}], "]"}], "[", 
+              RowBox[{"[", 
+               RowBox[{"1", ",", "1"}], "]"}], "]"}], "]"}], "]"}], "]"}]}], 
+         "}"}]}], ",", 
+       RowBox[{"PlotLabel", "->", 
+        RowBox[{"t", "[", 
+         RowBox[{"[", 
+          RowBox[{
+           RowBox[{"FindPeaks", "[", 
+            RowBox[{
+             RowBox[{"t", "[", 
+              RowBox[{"[", 
+               RowBox[{";;", ",", "2"}], "]"}], "]"}], ",", "Automatic", ",", 
+             "Automatic", ",", "1000"}], "]"}], "[", 
+           RowBox[{"[", 
+            RowBox[{"1", ",", "1"}], "]"}], "]"}], "]"}], "]"}]}]}], "]"}]}], 
+    ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{"Length", "@", "lfiles1Tnames"}], ",", "1"}], "}"}], ",", 
+    RowBox[{"Paneled", "->", "False"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{
+  3.970126466735756*^9, {3.970127509028023*^9, 3.9701277201935883`*^9}, {
+   3.9701277529463406`*^9, 3.970127764054693*^9}, 3.970127846862051*^9, {
+   3.9701279240133495`*^9, 3.970127946725134*^9}},
+ CellLabel->
+  "In[168]:=",ExpressionUUID->"1394bd53-2e55-d143-aa73-ed01f7423362"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 2, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`i$$], 1, 30, 1, ControlType -> Manipulator}}, 
+    Typeset`size$$ = {350., {108.5053763337495, 114.23731013774557`}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 1}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, 
+      "Body" :> ($CellContext`t = AlexTools`ALXFourier`fourier[
+          Fold[HighpassFilter, 
+           AlexTools`ALXReading`readMyFile[
+            Part[$CellContext`lfiles1Tnames, $CellContext`i$$], 2], 
+           2 (Pi/$CellContext`sRate) {60, 60, 60}], $CellContext`sRate, 1000]; 
+       ListLinePlot[$CellContext`t, Epilog -> {AlexTools`ALXSettings`red, 
+           AbsolutePointSize[7], 
+           Point[
+            Part[$CellContext`t, 
+             Part[
+              FindPeaks[
+               Part[$CellContext`t, 
+                Span[1, All], 2], Automatic, Automatic, 1000], 1, 1]]]}, 
+         PlotLabel -> Part[$CellContext`t, 
+           Part[
+            FindPeaks[
+             Part[$CellContext`t, 
+              Span[1, All], 2], Automatic, Automatic, 1000], 1, 1]]]), 
+      "Specifications" :> {{$CellContext`i$$, 1, 30, 1}}, 
+      "Options" :> {Paneled -> False}, "DefaultOptions" :> {}],
+     ImageSizeCache->{370., {140.2412161774995, 145.97314998149557`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.970127520446966*^9, {3.970127584558796*^9, 3.9701276587028275`*^9}, {
+   3.9701276952430935`*^9, 3.970127721846987*^9}, {3.9701277572602386`*^9, 
+   3.9701277657263603`*^9}, {3.970127848820036*^9, 3.970127854198929*^9}, {
+   3.9701279247835693`*^9, 3.970127947470539*^9}},
+ CellLabel->
+  "Out[168]=",ExpressionUUID->"217a1487-1b1b-2548-a914-9cf89318c81f"]
+}, Open  ]]
+},
+WindowSize->{1440, 747.75},
+WindowMargins->{{1434, Automatic}, {Automatic, -6}},
+FrontEndVersion->"14.2 for Microsoft Windows (64-bit) (December 26, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a2bbc25b-ed5a-7d4f-8213-b15ca750801e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 206, 4, 66, "Input",ExpressionUUID->"3ade5adc-5a8f-ca45-91be-128794695cf6"],
+Cell[CellGroupData[{
+Cell[785, 28, 2728, 65, 218, "Input",ExpressionUUID->"f9f57d4d-3a63-0b45-ba9a-0528c5bedd1d"],
+Cell[3516, 95, 1030, 17, 32, "Output",ExpressionUUID->"70939704-b027-9049-ac3b-2604f18e6885"],
+Cell[4549, 114, 1028, 17, 32, "Output",ExpressionUUID->"e85ba0f2-2c40-2e43-89d4-320d0ce8278f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5614, 136, 180, 3, 28, "Input",ExpressionUUID->"fe367aab-2e45-6644-82f4-3fa4bd2a6796"],
+Cell[5797, 141, 232, 4, 32, "Output",ExpressionUUID->"112a2fc7-09c2-4846-b026-e4d671722807"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6066, 150, 633, 15, 28, "Input",ExpressionUUID->"cad700fd-1d5b-8b45-9c82-fc46e6deac9f"],
+Cell[6702, 167, 327, 5, 32, "Output",ExpressionUUID->"6f8d42cc-82c5-7a41-8238-fcac964f4b28"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7066, 177, 2389, 61, 123, "Input",ExpressionUUID->"1394bd53-2e55-d143-aa73-ed01f7423362"],
+Cell[9458, 240, 2802, 57, 303, "Output",ExpressionUUID->"217a1487-1b1b-2548-a914-9cf89318c81f"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,167 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5645,        159]
+NotebookOptionsPosition[      4533,        132]
+NotebookOutlinePosition[      4941,        148]
+CellTagsIndexPosition[      4898,        145]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Risk Assessment for Marcos", "Section",
+ CellChangeTimes->{{3.8788872320325*^9, 
+  3.8788872432086697`*^9}},ExpressionUUID->"7b223185-1de1-434f-9fd2-\
+a52ccfccf0cf"],
+
+Cell["\<\
+This is a qualitative calculation for the lethal dose of TTX, sufficient to \
+harm our unit of measurement, a.k.a. \[OpenCurlyDoubleQuote]Marcos\
+\[CloseCurlyDoubleQuote].
+As all good sources, we start at our trusty www.wikipedia.org, for us to find \
+TTX\[CloseCurlyQuote]s molar mass and lethal dose values.\
+\>", "Text",
+ CellChangeTimes->{{3.878887245296526*^9, 
+  3.878887347135976*^9}},ExpressionUUID->"4978ef03-ee4d-4e0f-9f92-\
+7cdd17474e65"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"TTXmolarMass", " ", "=", " ", 
+    RowBox[{"319.268", " ", 
+     SuperscriptBox["10", "3"]}]}], ";"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"g", "/", "mol"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"lethalDose", " ", "=", " ", 
+    RowBox[{"8", " ", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "6"}]]}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"g", "/", "kg"}], " ", "-", " ", 
+    RowBox[{"as", " ", "measured", " ", "for", " ", "mice"}]}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mosWeight", " ", "=", " ", 
+    RowBox[{"2.5", " ", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "6"}]]}]}], ";"}], " ", 
+  RowBox[{"(*", "kg", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"MarcosWeight", " ", "=", " ", "80"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"a", " ", "pessimistic", " ", "value", " ", "for", " ", 
+    RowBox[{"Marcos", "'"}], " ", 
+    RowBox[{"weight", ".", " ", "All"}], " ", "that", " ", "muscle", " ", 
+    "probably", " ", "weighs", " ", "around", " ", "100", " ", "kg"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LDmosquito", " ", "=", " ", 
+   RowBox[{"lethalDose", "*", "mosWeight", " ", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "3"}]]}]}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"in", " ", "grams"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LDmarcos", " ", "=", " ", 
+   RowBox[{"1.", " ", "lethalDose", "*", "MarcosWeight", "   ", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "3"}]]}]}], 
+  RowBox[{"(*", " ", 
+   RowBox[{"in", " ", "grams"}], " ", "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"LDmarcos", "/", "LDmosquito"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.878887350186737*^9, 3.878887356216219*^9}, {
+  3.878887409072611*^9, 3.878887444856115*^9}, {3.878887514463433*^9, 
+  3.878887565575991*^9}, {3.878887596319665*^9, 3.8788878420662546`*^9}},
+ CellLabel->
+  "In[344]:=",ExpressionUUID->"4de53363-f2e1-498c-8fd4-58eae3043860"],
+
+Cell[BoxData["2.`*^-14"], "Output",
+ CellChangeTimes->{
+  3.8788876868215413`*^9, {3.878887767614069*^9, 3.8788878438306637`*^9}},
+ CellLabel->
+  "Out[348]=",ExpressionUUID->"f2dff01a-accb-41f2-80c1-33434d9bdf27"],
+
+Cell[BoxData["6.4`*^-7"], "Output",
+ CellChangeTimes->{
+  3.8788876868215413`*^9, {3.878887767614069*^9, 3.8788878438346677`*^9}},
+ CellLabel->
+  "Out[349]=",ExpressionUUID->"44dd8810-3ce9-42c2-ba0e-0aa17427c3f1"],
+
+Cell[BoxData["3.2`*^7"], "Output",
+ CellChangeTimes->{
+  3.8788876868215413`*^9, {3.878887767614069*^9, 3.8788878438386707`*^9}},
+ CellLabel->
+  "Out[350]=",ExpressionUUID->"a096b932-7815-4499-a45d-13bb41ba1a83"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NotebookDirectory", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.8788883003828135`*^9, 3.8788883035556755`*^9}},
+ CellLabel->
+  "In[351]:=",ExpressionUUID->"efcb1c32-08c4-4d70-a021-737ec37f45ae"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\hadif\\\\Dropbox\\\\Documents\\\\Archive\\\\\
+Alexandros\\\\UK\\\\Property\\\\\"\>"], "Output",
+ CellChangeTimes->{3.8788883039780397`*^9},
+ CellLabel->
+  "Out[351]=",ExpressionUUID->"e4066529-ba26-4d02-bfd6-177b3fc01b87"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1440., 747.75},
+WindowMargins->{{1434, Automatic}, {Automatic, -6}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"63cf9c3b-3987-4aad-98cb-1a2f32d28710"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 171, 3, 67, "Section",ExpressionUUID->"7b223185-1de1-434f-9fd2-a52ccfccf0cf"],
+Cell[754, 27, 459, 9, 58, "Text",ExpressionUUID->"4978ef03-ee4d-4e0f-9f92-7cdd17474e65"],
+Cell[CellGroupData[{
+Cell[1238, 40, 2107, 55, 181, "Input",ExpressionUUID->"4de53363-f2e1-498c-8fd4-58eae3043860"],
+Cell[3348, 97, 213, 4, 32, "Output",ExpressionUUID->"f2dff01a-accb-41f2-80c1-33434d9bdf27"],
+Cell[3564, 103, 213, 4, 32, "Output",ExpressionUUID->"44dd8810-3ce9-42c2-ba0e-0aa17427c3f1"],
+Cell[3780, 109, 212, 4, 32, "Output",ExpressionUUID->"a096b932-7815-4499-a45d-13bb41ba1a83"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4029, 118, 218, 4, 28, "Input",ExpressionUUID->"efcb1c32-08c4-4d70-a021-737ec37f45ae"],
+Cell[4250, 124, 255, 4, 32, "Output",ExpressionUUID->"e4066529-ba26-4d02-bfd6-177b3fc01b87"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
